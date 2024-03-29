@@ -40,12 +40,20 @@
 // export default App
 
 
-
+import Home from "./Quiz/components/Home"
+import "./Quiz/style/style.scss"
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 const App = () => {
-
+  const route = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Home />} >
+        {/* <Route index element={<Home />} /> */}
+      </Route>
+    )
+  )
   return (
     <div>
-
+      <RouterProvider router={route} />
     </div>
   )
 }
